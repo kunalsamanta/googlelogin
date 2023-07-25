@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import './App.css';
+import { SignIn } from "./glogin";
+
 
 export const Login = (props) =>{
     const [email,setEmail] =useState('');
@@ -10,6 +12,8 @@ export const Login = (props) =>{
     }
     return(
         <div className="form-container">
+            <SignIn />
+            
             <form className="login-form" onSubmit={handleSubmit}>
             <label htmlForfor="emil">email</label>
             <input value={email} onChange={(e)=>setEmail(e.target.value)} type="email"placeholder="abcd@gamil.com" id="emil"></input>

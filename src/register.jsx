@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import './App.css';
+import { SignIn } from "./glogin";
 
 export const Register = (props) =>{
     const [email,setEmail] =useState('');
@@ -12,6 +13,7 @@ export const Register = (props) =>{
 
     return(
         <div className="form-container">
+            <SignIn />
             <form className="registation-form" onSubmit={handleSubmit}>
             <label for="name" htmlFor="name">Name</label>
             <input value={name} name="name" type="text" placeholder="Enter your full Name" id="name"></input>
@@ -21,7 +23,7 @@ export const Register = (props) =>{
             <input value={pass} onChange={(e)=>setPass(e.target.value)} type="password" placeholder="********" id="password"></input>
             <button type="submit">Login</button>
             </form>
-            <button className="lnk-button" onClick={() => props.onFromSwitch('login')}>Already have account?Login hear</button>
+            <button  onClick={() => props.onFromSwitch('login')}>Already have account?Login hear</button>
         </div>
     )
 }
